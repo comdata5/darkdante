@@ -4,7 +4,22 @@ import time
 import subprocess
 import random
 import re
+# import calorama
 
+logo = """
+
+******************************************************************************************************************************
+*  This tool was written by the coder comdata5                                                                               *
+*  GitHub : https://github.com/comdata5                                                                                      *
+*  Telegram : @all_of_comdata                                                                                                *
+*  Vkontakte : @all_of_comdata5                                                                                              *
+*  Xss.is : @darkdantez                                                                                                      *
+******************************************************************************************************************************
+"""
+
+print(logo)
+
+time.sleep(3)
 
 chooseOperations = input("\n 1. Парсинг \n 2. Сменить мак адрес \n 3. Просканировать на порты \n 4. Запустить бомбер \n 5. Взлом камер \n 6. Выход \n Выберите операцию : ")
 
@@ -72,16 +87,21 @@ def bomber():
         _email = _name+f'{iteration}'+'@gmail.com'
         email = _name+f'{iteration}'+'@gmail.com'
         try:
+            # Посылаем запрос, в котором мы будем хранить номер телефона
             requests.post('https://api.tinkoff.ru/v1/sign_up', data={'phone': '+'+_phone}, headers={})
+            # Печатаем что все отправилось успешно
             print('[+] Tinkoff отправлено!')
         except Exception as ex:
-            print('[-] Tinkoff не отправлено!' + str(ex))    
+            # Если появилась ошибка (ex), мы ее выедем 
+            print('[-] Tinkoff не отправлено!' + str(ex))
+    
         try:
                iteration += 1
                print(('{} круг пройден.').format(iteration))
         except:
             break
 def cam_hackers_country():
+#    colorama.init()
     print("""
     \033[1;31m\033[1;37m ██████╗ █████╗ ███╗   ███╗      ██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗ ███████╗
     ██╔════╝██╔══██╗████╗ ████║      ██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗██╔════╝
@@ -89,7 +109,7 @@ def cam_hackers_country():
     ██║     ██╔══██║██║╚██╔╝██║╚════╝██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗╚════██║
     ╚██████╗██║  ██║██║ ╚═╝ ██║      ██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║███████║
     \033[1;31m ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝      ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
-    \033[1;31m                                                                        COMDATA5
+    \033[1;31m                                                                        COMDATA5 x AngelSecurityTeam
     \033[1;31m1) \033[1;37mUnited States                \033[1;31m31) \033[1;37mMexico                \033[1;31m61) \033[1;37mMoldova
     \033[1;31m2) \033[1;37mJapan                        \033[1;31m32) \033[1;37mFinland               \033[1;31m62) \033[1;37mNicaragua
     \033[1;31m3) \033[1;37mItaly                        \033[1;31m33) \033[1;37mChina                 \033[1;31m63) \033[1;37mMalta
@@ -160,11 +180,7 @@ def cam_hackers_country():
     finally:
         print("\033[1;37m")
         exit()
-    
-    
-    
-
-    
+        
 if chooseOperations == "1":
     parsing()
 elif chooseOperations == "2":
@@ -176,5 +192,5 @@ elif chooseOperations == "4":
 elif chooseOperations == "5":
     cam_hackers_country()
 else:
+    input("Чтобы выйти нажмите Enter: ")
     print("Вы вышли....")
-
